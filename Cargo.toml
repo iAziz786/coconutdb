@@ -1,0 +1,20 @@
+[package]
+name = "coconutdb"
+version = "0.1.0"
+authors = ["Mohammad Aziz <mdaziz067@gmail.com>"]
+edition = "2021"
+
+[dependencies]
+bincode = "1"
+byteorder = "1"
+crc = "1"
+serde = "1"
+serde_derive = "1"
+
+[lib]
+name = "coconutdb"
+path = "src/lib.rs"
+
+[[bin]]
+name = "coconutdb"
+src = "src/main.rs"
