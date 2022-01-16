@@ -61,8 +61,8 @@ impl MemTable {
             }
 
             Err(idx) => {
-                self.size += mem::size_of_val(&entry.key)
-                    + mem::size_of_val(&entry.value)
+                self.size += entry.key.len()
+                    + entry.value.as_ref().unwrap().len()
                     + mem::size_of_val(&entry.timestamp)
                     + mem::size_of_val(&entry.deleted);
                 self.entires.insert(idx, entry)
